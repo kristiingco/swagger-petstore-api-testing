@@ -23,6 +23,18 @@
 						"type": "text/javascript",
 						"packages": {}
 					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();\r",
+							"const petId = jsonData.id;\r",
+							"pm.collectionVariables.set(\"petId\", petId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
 				}
 			],
 			"request": {
@@ -73,6 +85,11 @@
 		}
 	],
 	"variable": [
+		{
+			"key": "petId",
+			"value": "",
+			"type": "string"
+		},
 		{
 			"key": "petName",
 			"value": "",
