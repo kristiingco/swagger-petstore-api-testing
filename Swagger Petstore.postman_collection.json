@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "d402ffdd-fd11-46ba-b2d5-2ca8072b9d6d",
+		"name": "Swagger Petstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31983249"
+	},
+	"item": [
+		{
+			"name": "Adding a new pet",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const petName = pm.variables.replaceIn(\"{{$randomFirstName}}\");\r",
+							"const photoUrl = pm.variables.replaceIn(\"{{$randomAnimalsImage}}\");\r",
+							"\r",
+							"pm.collectionVariables.set(\"petName\", petName);\r",
+							"pm.collectionVariables.set(\"photoUrl\", photoUrl);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"{{petName}}\",\r\n  \"photoUrls\": [\r\n    \"{{photoUrl}}\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/pet",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pet"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "petName",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "photoUrl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
