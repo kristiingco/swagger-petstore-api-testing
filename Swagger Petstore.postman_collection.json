@@ -60,6 +60,24 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Getting a pet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pet/{{petId}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pet",
+						"{{petId}}"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
